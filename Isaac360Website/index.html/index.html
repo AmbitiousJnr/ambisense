@@ -1,0 +1,598 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+
+<title>Isaac 360 Printing and Business Consult</title>
+
+<style>
+
+:root {
+    --primary: #071b36;
+    --secondary: #f5a623;
+    --background: #f4f7fb;
+    --text: #222;
+    --white: #ffffff;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    color: var(--text);
+    line-height: 1.6;
+}
+
+.container {
+    width: 90%;
+    max-width: 1150px;
+    margin: auto;
+}
+
+a {
+    text-decoration: none;
+}
+
+header {
+    background: var(--primary);
+    color: var(--white);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 18px 0;
+}
+
+.logo {
+    font-size: 22px;
+    font-weight: bold;
+}
+
+.logo span {
+    color: var(--secondary);
+}
+
+.nav-links {
+    display: flex;
+    gap: 20px;
+    list-style: none;
+}
+
+.nav-links a {
+    color: var(--white);
+    font-weight: bold;
+}
+
+.nav-links a:hover {
+    color: var(--secondary);
+}
+
+.hero {
+    background: linear-gradient(135deg, #071b36, #174b7a);
+    color: white;
+    text-align: center;
+    padding: 110px 20px;
+}
+
+.hero h1 {
+    font-size: 50px;
+    line-height: 1.2;
+    margin-bottom: 20px;
+}
+
+.hero h1 span {
+    color: var(--secondary);
+}
+
+.hero p {
+    max-width: 700px;
+    margin: auto;
+    font-size: 18px;
+    margin-bottom: 30px;
+}
+
+.btn {
+    display: inline-block;
+    background: var(--secondary);
+    color: #111;
+    padding: 13px 25px;
+    border-radius: 6px;
+    font-weight: bold;
+    margin: 5px;
+    transition: 0.3s;
+}
+
+.btn:hover {
+    background: white;
+    transform: translateY(-3px);
+}
+
+
+section {
+    padding: 75px 0;
+}
+
+.section-title {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.section-title h2 {
+    color: var(--primary);
+    font-size: 35px;
+}
+
+.section-title p {
+    color: #666;
+}
+
+
+.services {
+    background: var(--background);
+}
+
+.cards {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 25px;
+}
+
+.card {
+    background: white;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 5px 20px #00000010;
+    border-bottom: 4px solid var(--secondary);
+    transition: 0.3s;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+}
+
+.card h3 {
+    color: var(--primary);
+    margin: 15px 0;
+}
+
+.card p {
+    color: #666;
+}
+
+.icon {
+    font-size: 40px;
+}
+
+/* ABOUT */
+
+.about-content {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 35px;
+    align-items: center;
+}
+
+.about-content h2 {
+    font-size: 35px;
+    color: var(--primary);
+    margin-bottom: 20px;
+}
+
+.about-box {
+    background: var(--primary);
+    color: white;
+    padding: 35px;
+    border-radius: 10px;
+}
+
+.about-box h3 {
+    color: var(--secondary);
+    margin-bottom: 15px;
+}
+
+/* TEAM */
+
+.team {
+    background: var(--background);
+}
+
+.team-card {
+    text-align: center;
+}
+
+.team-initial {
+    width: 90px;
+    height: 90px;
+    background: var(--primary);
+    color: var(--secondary);
+    border: 4px solid var(--secondary);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: auto;
+    font-size: 30px;
+    font-weight: bold;
+}
+
+.team-card h3 {
+    margin-top: 18px;
+}
+
+/* CONTACT */
+
+.contact-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 25px;
+}
+
+.contact-box {
+    background: var(--background);
+    padding: 30px;
+    border-radius: 10px;
+}
+
+.contact-box h3 {
+    color: var(--primary);
+    margin-bottom: 15px;
+}
+
+.contact-box p {
+    margin: 10px 0;
+}
+
+/* FOOTER */
+
+footer {
+    background: var(--primary);
+    color: white;
+    text-align: center;
+    padding: 25px;
+}
+
+footer span {
+    color: var(--secondary);
+}
+
+
+@media (max-width: 768px) {
+
+    .navbar {
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    .nav-links {
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    .hero h1 {
+        font-size: 35px;
+    }
+
+    .cards {
+        grid-template-columns: 1fr;
+    }
+
+    .about-content,
+    .contact-grid {
+        grid-template-columns: 1fr;
+    }
+}
+</style>
+</head>
+
+<body>
+
+
+<header>
+    <div class="container navbar">
+
+       
+        <div class="logo">
+            ISAAC 360 <span>PRINTING AND BUSINESS CONSULT</span>
+        </div>
+
+        <ul class="nav-links">
+            <li><a href="#home">HOME</a></li>
+            <li><a href="#services">SERVICE</a></li>
+            <li><a href="#about">ABOUT</a></li>
+            <li><a href="#team">OUR TEAM</a></li>
+            <li><a href="#contact">CONTACT</a></li>
+        </ul>
+
+    </div>
+</header>
+
+
+<section class="hero" id="home">
+
+    <div class="container">
+
+       
+        <h1>
+            Ideas Made <span>Visible.</span><br>
+            Prints Made Perfect.
+        </h1>
+
+        <p>
+            Welcome to Isaac 360 Printing And  Business Consults
+            We provide quality printing, graphic design,
+            branding, and professional business services.
+        </p>
+
+        <a href="#services" class="btn">OUR SERVICES</a>
+        <a href="#contact" class="btn">CONTACT US</a>
+
+    </div>
+
+</section>
+
+
+
+<section class="services" id="services">
+
+    <div class="container">
+
+        <div class="section-title">
+            <h2>OUR SERVICES</h2>
+            <p>Quality printing and creative solutions for everyone.</p>
+        </div>
+
+        <div class="cards">
+
+            <div class="card">
+                <div class="icon">🖨️</div>
+                <h3>1.PRINTING SERVICES</h3>
+                <p>
+                    Flyers, posters, business cards, documents,
+                    banners, stickers, T-shirt Design,  and other printing services.
+                </p>
+            </div>
+
+            <div class="card">
+                <div class="icon">🎨</div>
+                <h3>GRAPHIC DESIGN</h3>
+                <p>
+                    Professional logos, invitations, flyers,
+                    banners, stickers, Logo Design, and creative designs.
+                </p>
+            </div>
+
+            <div class="card">
+                <div class="icon">📚</div>
+                <h3>BUSINESS SERVICES</h3>
+                <p>
+                    Typing, photocopying, scanning, lamination,
+                    binding, and document preparation such as Passport, Visa cards,
+                </p>
+            </div>
+            <div class="card">
+                <div class="icon">📚</div>
+                <h3>BUSINESS GROWTH</h3>
+                <p>
+                   We help you plan, brand, and grow your business the right way.
+                </p>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<section id="about">
+
+    <div class="container about-content">
+
+        <div>
+            <h2>About Isaac 360 Printing And Business Consults</h2>
+
+            <p>
+                Isaac 360 Printing Press is a professional printing
+                and graphic design business committed to delivering
+                excellent quality and customer satisfaction.
+            </p>
+
+            <br>
+
+            <p>
+                Our mission is to bring your ideas to life through
+                creativity, quality printing, and dependable service.
+                We believe every design deserves to look its best.
+            </p>
+        </div>
+
+        <div class="about-box">
+            <h3>Our Vision</h3>
+
+            <p>
+                To become a trusted and leading printing and
+                graphic design brand known for quality,
+                creativity, and professionalism.
+            </p>
+        </div>
+
+    </div>
+
+</section>
+
+<!-- ===============================
+     MANAGEMENT TEAM
+================================ -->
+
+<section class="team" id="team">
+
+    <div class="container">
+
+        <div class="section-title">
+            <h2>Meet Our Management</h2>
+            <p>The team behind Isaac 360 Printing Press.</p>
+        </div>
+
+        <div class="cards">
+
+            <!-- CEO -->
+            <div class="card team-card">
+
+                <div class="team-initial">SN</div>
+
+                <h3>Seth Appiah Ninson</h3>
+
+                <p>
+                    <strong>AMBITIOUS JNR</strong><br>
+                    Chief Executive Officer (CEO)
+                </p>
+
+            </div>
+
+            <!-- DIRECTOR -->
+            <div class="card team-card">
+
+                <div class="team-initial">IK</div>
+
+                <h3>Isaac Asirifi Kwadjo</h3>
+
+                <p>
+                    Director
+                </p>
+
+            </div>
+
+            <!-- MANAGER -->
+            <div class="card team-card">
+
+                <div class="team-initial">AA</div>
+
+                <h3>Abigail Amoah</h3>
+
+                <p>
+                    Manager
+                </p>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<section id="contact">
+
+    <div class="container">
+
+        <div class="section-title">
+            <h2>Contact Us</h2>
+            <p>We are ready to work with you.</p>
+        </div>
+
+        <div class="contact-grid">
+
+            <div class="contact-box">
+
+                <h2>BUSINESS INFORMATION</h2>
+
+                
+
+                <p>
+                    <strong>BUSINESS NAME:</strong>
+                    Isaac 360 Printing And Business Consults
+                </p>
+
+                <p>
+                    <strong>CONTACTS:</strong>
+                    2333535942486 / 233533143929 <br>
+                    233557194001 / 233537560815
+                </br>
+                </p>
+
+                <p>
+                    <strong>EMAIL:</strong>
+                   appiahsethninson3@gmail.com
+                </p>
+
+                <p>
+                    <strong>LOCATION:</strong>
+                    Osiem Saviour Mission-Eastern Region; <br>
+
+                    Opposite Saviour Primary School_ Maame Nkrane (Waakye Seller)
+                </p>
+
+            </div>
+
+            <div class="contact-box">
+
+                <h3>WhatsApp Enquiries</h3>
+
+                <p>
+                    Contact us directly on WhatsApp for orders,
+                    quotations, and business enquiries.
+                </p>
+
+                
+
+                <a
+                    href="https://wa.me/233535942486 / 233557194001"
+                    class="btn"
+                    target="_blank"
+                    rel="noopener"
+                >
+                    Chat on WhatsApp / You can Call Us
+                </a>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<footer>
+
+    <p>
+        © <span id="year"></span>
+        <br>
+        Isaac 360 Printing And Business Consult.
+        All Rights Reserved.
+    </p>
+
+    <p>
+        Designed by <span>AMBITIOUS JNR</span>
+    </p>
+
+</footer>
+
+
+<script>
+
+    document.getElementById("year").textContent =
+        new Date().getFullYear();
+</script>
+
+</body>
+</html>
